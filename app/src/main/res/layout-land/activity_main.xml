@@ -2,12 +2,13 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/b_dtrl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/b_dtrl"
     android:gravity="bottom"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <!---
     Подход относительно минималистичный
     В основе (LinearLayout)
@@ -21,33 +22,39 @@
         так как все элементы имеют явную групировку по столбцам и TableLayout
         позволяет не только отдать задачу размера содержимого на размер столбцов,
         но и сделать процентное соотношение размера по к экрана
-        при этом не прибегая ни к weight ни к работе с процентам недоступным при работе в LinearLayout
+        при этом не прибегая ни к weight ни к работе с процентам недоступным при работе в LinearLayout.
+        И в дополнение по мимо интереса, я не взял Gridlayout так как хотел использовать разный размер столбцов
+        и при необходимости  иметь возможность растянуть содержимое с минимальными затратами.
     -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/D_button_margin_l"
-            android:textColor="@color/teal_200"
             android:text="@string/Memory_T"
-            android:textSize="20sp"/>
+            android:textColor="@color/teal_200"
+            android:textSize="20sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/D_button_margin"
             android:background="#5CE1D4D4"
-            android:textSize="20sp"
-            android:text=""/>
+            android:text=""
+            android:textSize="20sp" />
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.3">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -62,9 +69,10 @@
         android:layout_height="0dp"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:stretchColumns="3,4">
+        android:stretchColumns="2,3,4,5,6">
 
         <TableRow>
+
             <Button
                 android:id="@+id/B_ln"
                 android:layout_height="@dimen/liltle_lower"
@@ -72,7 +80,9 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/ln" />
+                android:text="@string/ln"
+                tools:ignore="TouchTargetSizeCheck" />
+
             <Button
                 android:id="@+id/B_fac"
                 android:layout_height="@dimen/liltle_lower"
@@ -80,7 +90,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/fac" />
+                android:text="@string/fac"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_save"
@@ -89,7 +100,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/save" />
+                android:text="@string/save"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_load"
@@ -98,7 +110,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/load" />
+                android:text="@string/load"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_delete_1s"
@@ -107,28 +120,32 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/delete_1s" />
+                android:text="@string/delete_1s"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_delete_1w"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/delete_1w"
                 android:textColor="@color/white"
-                android:text="@string/delete_1w" />
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_delete_All"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/delete_All"
                 android:textColor="@color/white"
-                android:text="@string/delete_All" />
+                tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
         <TableRow>
+
             <Button
                 android:id="@+id/B_log"
                 android:layout_height="@dimen/liltle_lower"
@@ -136,7 +153,9 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/log" />
+                android:text="@string/log"
+                tools:ignore="TouchTargetSizeCheck" />
+
             <Button
                 android:id="@+id/B_cory"
                 android:layout_height="@dimen/liltle_lower"
@@ -144,7 +163,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/cory" />
+                android:text="@string/cory"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_num_7"
@@ -153,7 +173,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/_7" />
+                android:text="@string/_7"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_num_8"
@@ -162,7 +183,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/_8" />
+                android:text="@string/_8"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_num_9"
@@ -171,28 +193,32 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/_9" />
+                android:text="@string/_9"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_div"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/div"
                 android:textColor="@color/white"
-                android:text="@string/div" />
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_mod"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/mod"
                 android:textColor="@color/white"
-                android:text="@string/mod" />
+                tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
         <TableRow>
+
             <Button
                 android:id="@+id/B_sin"
                 android:layout_height="@dimen/liltle_lower"
@@ -200,7 +226,9 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/sin" />
+                android:text="@string/sin"
+                tools:ignore="TouchTargetSizeCheck" />
+
             <Button
                 android:id="@+id/B_stepx"
                 android:layout_height="@dimen/liltle_lower"
@@ -208,7 +236,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/stepx" />
+                android:text="@string/stepx"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_num_4"
@@ -217,7 +246,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/_4" />
+                android:text="@string/_4"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_num_5"
@@ -226,7 +256,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/_5" />
+                android:text="@string/_5"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_num_6"
@@ -235,28 +266,32 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/_6" />
+                android:text="@string/_6"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_mul"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/mul"
                 android:textColor="@color/white"
-                android:text="@string/mul" />
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_cor"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/cor"
                 android:textColor="@color/white"
-                android:text="@string/cor" />
+                tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
         <TableRow>
+
             <Button
                 android:id="@+id/B_cos"
                 android:layout_height="@dimen/liltle_lower"
@@ -264,7 +299,9 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/cos" />
+                android:text="@string/cos"
+                tools:ignore="TouchTargetSizeCheck" />
+
             <Button
                 android:id="@+id/B_step"
                 android:layout_height="@dimen/liltle_lower"
@@ -272,7 +309,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/step" />
+                android:text="@string/step"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_num_1"
@@ -281,7 +319,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/_1" />
+                android:text="@string/_1"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_num_2"
@@ -290,7 +329,8 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/_2" />
+                android:text="@string/_2"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_num_3"
@@ -299,28 +339,32 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/_3" />
+                android:text="@string/_3"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_sub"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/sub"
                 android:textColor="@color/white"
-                android:text="@string/sub" />
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_rev"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/rev"
                 android:textColor="@color/white"
-                android:text="@string/rev" />
+                tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
         <TableRow>
+
             <Button
                 android:id="@+id/B_tan"
                 android:layout_height="@dimen/liltle_lower"
@@ -328,18 +372,21 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/tan" />
+                android:text="@string/tan"
+                tools:ignore="TouchTargetSizeCheck" />
+
             <Space />
 
             <Button
                 android:id="@+id/B_num_0"
                 android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:layout_span="2"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:layout_span="2"
-                android:text="@string/_0" />
+                android:text="@string/_0"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/B_sep"
@@ -348,25 +395,28 @@
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:text="@string/sep" />
+                android:text="@string/sep"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_add"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/add"
                 android:textColor="@color/white"
-                android:text="@string/add" />
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_eqw"
-                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
+                android:layout_height="@dimen/liltle_lower"
                 android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
+                android:text="@string/eqw"
                 android:textColor="@color/white"
-                android:text="@string/eqw" />
+                tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
     </TableLayout>
