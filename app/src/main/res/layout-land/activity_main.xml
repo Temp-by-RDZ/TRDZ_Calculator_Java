@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/b_dtr"
+    android:background="@drawable/b_dtrl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
@@ -25,19 +26,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.07">
+        android:layout_weight="0.2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/D_button_margin"
+            android:layout_margin="@dimen/D_button_margin_l"
             android:textColor="@color/teal_200"
             android:text="@string/Memory_T"
             android:textSize="20sp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/D_button_margin"
+            android:layout_marginTop="@dimen/D_button_margin"
             android:background="#5CE1D4D4"
             android:textSize="20sp"
             android:text=""/>
@@ -46,7 +47,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.4">
+        android:layout_weight="0.3">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -60,13 +61,31 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="5dp"
-        android:layout_weight="0.5"
+        android:layout_weight="1"
         android:stretchColumns="3,4">
 
         <TableRow>
             <Button
+                android:id="@+id/B_ln"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/ln" />
+            <Button
+                android:id="@+id/B_fac"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/fac" />
+
+            <Button
                 android:id="@+id/B_save"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -74,7 +93,8 @@
 
             <Button
                 android:id="@+id/B_load"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -82,7 +102,8 @@
 
             <Button
                 android:id="@+id/B_delete_1s"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -90,26 +111,45 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_delete_1w"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/delete_1w" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_delete_All"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/delete_All" />
         </TableRow>
 
         <TableRow>
+            <Button
+                android:id="@+id/B_log"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/log" />
+            <Button
+                android:id="@+id/B_cory"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/cory" />
 
             <Button
                 android:id="@+id/B_num_7"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -117,7 +157,8 @@
 
             <Button
                 android:id="@+id/B_num_8"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -125,7 +166,8 @@
 
             <Button
                 android:id="@+id/B_num_9"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -133,26 +175,45 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_div"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/div" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_mod"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/mod" />
         </TableRow>
 
         <TableRow>
+            <Button
+                android:id="@+id/B_sin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/sin" />
+            <Button
+                android:id="@+id/B_stepx"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/stepx" />
 
             <Button
                 android:id="@+id/B_num_4"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -160,7 +221,8 @@
 
             <Button
                 android:id="@+id/B_num_5"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -168,7 +230,8 @@
 
             <Button
                 android:id="@+id/B_num_6"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -176,26 +239,45 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_mul"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/mul" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_cor"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/cor" />
         </TableRow>
 
         <TableRow>
+            <Button
+                android:id="@+id/B_cos"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/cos" />
+            <Button
+                android:id="@+id/B_step"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/step" />
 
             <Button
                 android:id="@+id/B_num_1"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -203,7 +285,8 @@
 
             <Button
                 android:id="@+id/B_num_2"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -211,7 +294,8 @@
 
             <Button
                 android:id="@+id/B_num_3"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -219,26 +303,38 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_sub"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/sub" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_rev"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/rev" />
         </TableRow>
 
         <TableRow>
+            <Button
+                android:id="@+id/B_tan"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/tan" />
+            <Space />
 
             <Button
                 android:id="@+id/B_num_0"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -247,7 +343,8 @@
 
             <Button
                 android:id="@+id/B_sep"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_height="@dimen/liltle_lower"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
@@ -255,16 +352,18 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_add"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/add" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_eqw"
+                android:layout_height="@dimen/liltle_lower"
                 style="@style/Widget.AppCompat.Button.Small"
-                android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_marginBottom="@dimen/D_button_margin_l"
                 android:backgroundTint="@color/Buttons_color_2"
                 android:textColor="@color/white"
                 android:text="@string/eqw" />

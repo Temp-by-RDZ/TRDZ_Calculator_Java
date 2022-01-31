@@ -14,9 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Base.Wite" parent="ThemeOverlay.AppCompat">
-        android:backgroundTint="#DA770F0F"
-        android:insetLeft="3dp"
-        android:insetRight="3dp"
-    </style>
 </resources>

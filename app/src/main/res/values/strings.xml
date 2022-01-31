@@ -24,5 +24,15 @@
     <string name="sep">,</string>
     <string name="add">+</string>
     <string name="eqw">=</string>
+    <string name="ln">ln</string>
+    <string name="log">log</string>
+    <string name="sin">sin</string>
+    <string name="cos">cos</string>
+    <string name="tan">tan</string>
+    <string name="cory">y√</string>
+    <string name="stepx">^</string>
+    <string name="step">10</string>
+
     <string name="Memory_T">В памяти:</string>
+    <string name="fac">!</string>
 </resources>

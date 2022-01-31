@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="D_button_margin">10dp</dimen>
+    <dimen name="D_button_margin_l">1dp</dimen>
     <dimen name="B_cor">3dp</dimen>
+    <dimen name="liltle_lower">40dp</dimen>
 </resources>
