@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/b_dtr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!---
+    В основе (LinearLayout)
+        Так как это простое приложение с явно выделеными строками
+    Заголовок (5%) - Последнее сохраненное значение  (LinearLayout)
+        Здесь всего одна строка из названия и результата
+    Верхний сегмент(40%) - Табло (FrameLayout)
+        Все что требуется здесь это цвет фона остальное производится уже внутри TextView
+    Нижний сегмент(50%)  - Кнопки (TableLayout)
+        Представление таблицой хорошо подходит для поставленной задачи
+        так как все элементы имеют явную групировку по столбцам и TableLayout
+        позволяет не только отдать задачу размера содержимого на размер столбцов,
+        но и сделать процентное соотношение размера по к экрана
+        при этом не прибегая ни к weight ни к работе с процентам недоступным при работе в LinearLayout
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.07">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/D_button_margin"
+            android:textColor="@color/teal_200"
+            android:text="@string/Memory_T"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/D_button_margin"
+            android:background="#5CE1D4D4"
+            android:textSize="20sp"
+            android:text=""/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/D_button_margin"
+            android:background="#5CE1D4D4"
+            android:text="" />
+    </FrameLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_weight="0.5"
+        android:stretchColumns="3,4">
+
+        <TableRow>
+            <Button
+                android:id="@+id/B_save"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/save" />
+
+            <Button
+                android:id="@+id/B_load"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/load" />
+
+            <Button
+                android:id="@+id/B_delete_1s"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/delete_1s" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_delete_1w"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/delete_1w" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_delete_All"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/delete_All" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/B_num_7"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/_7" />
+
+            <Button
+                android:id="@+id/B_num_8"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/_8" />
+
+            <Button
+                android:id="@+id/B_num_9"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/_9" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_div"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/div" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_mod"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/mod" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/B_num_4"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/_4" />
+
+            <Button
+                android:id="@+id/B_num_5"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/_5" />
+
+            <Button
+                android:id="@+id/B_num_6"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/_6" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_mul"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/mul" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_cor"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/cor" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/B_num_1"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/_1" />
+
+            <Button
+                android:id="@+id/B_num_2"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/_2" />
+
+            <Button
+                android:id="@+id/B_num_3"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/_3" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_sub"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/sub" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_rev"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/rev" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/B_num_0"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:layout_span="2"
+                android:text="@string/_0" />
+
+            <Button
+                android:id="@+id/B_sep"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color"
+                android:insetLeft="@dimen/B_cor"
+                android:insetRight="@dimen/B_cor"
+                android:text="@string/sep" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_add"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/add" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/B_eqw"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_marginBottom="@dimen/D_button_margin"
+                android:backgroundTint="@color/Buttons_color_2"
+                android:textColor="@color/white"
+                android:text="@string/eqw" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

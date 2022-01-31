@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Калькулятор</string>
+    <string name="save"><![CDATA[M<]]></string>
+    <string name="load"><![CDATA[M>]]></string>
+    <string name="delete_1s">←</string>
+    <string name="delete_1w">CE</string>
+    <string name="delete_All">CA</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_0">0</string>
+    <string name="div">/</string>
+    <string name="mod">%</string>
+    <string name="mul">*</string>
+    <string name="cor">√</string>
+    <string name="sub">-</string>
+    <string name="rev">±</string>
+    <string name="sep">,</string>
+    <string name="add">+</string>
+    <string name="eqw">=</string>
+    <string name="Memory_T">В памяти:</string>
+</resources>
