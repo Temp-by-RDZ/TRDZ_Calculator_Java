@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/b_dtr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/b_dtr"
     android:gravity="bottom"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -30,34 +31,42 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.07">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/D_button_margin"
-            android:textColor="@color/teal_200"
             android:text="@string/Memory_T"
-            android:textSize="20sp"/>
+            android:textColor="@color/teal_200"
+            android:textSize="20sp" />
+
         <TextView
+            android:id="@+id/T_Memory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/D_button_margin"
             android:background="#5CE1D4D4"
-            android:textSize="20sp"
-            android:text=""/>
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.4">
+
         <TextView
+            android:id="@+id/T_Result"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_margin="@dimen/D_button_margin"
             android:background="#5CE1D4D4"
-            android:text="" />
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="15sp" />
     </FrameLayout>
 
     <TableLayout
@@ -68,6 +77,7 @@
         android:stretchColumns="3,4">
 
         <TableRow>
+
             <Button
                 android:id="@+id/B_save"
                 android:layout_marginBottom="@dimen/D_button_margin"
@@ -97,16 +107,16 @@
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/delete_1w" />
+                android:text="@string/delete_1w"
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_delete_All"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/delete_All" />
+                android:text="@string/delete_All"
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow>
@@ -140,16 +150,16 @@
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/div" />
+                android:text="@string/div"
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_mod"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/mod" />
+                android:text="@string/mod"
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow>
@@ -183,16 +193,16 @@
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/mul" />
+                android:text="@string/mul"
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_cor"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/cor" />
+                android:text="@string/cor"
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow>
@@ -226,16 +236,16 @@
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/sub" />
+                android:text="@string/sub"
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_rev"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/rev" />
+                android:text="@string/rev"
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow>
@@ -243,10 +253,10 @@
             <Button
                 android:id="@+id/B_num_0"
                 android:layout_marginBottom="@dimen/D_button_margin"
+                android:layout_span="2"
                 android:backgroundTint="@color/Buttons_color"
                 android:insetLeft="@dimen/B_cor"
                 android:insetRight="@dimen/B_cor"
-                android:layout_span="2"
                 android:text="@string/_0" />
 
             <Button
@@ -262,16 +272,16 @@
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/add" />
+                android:text="@string/add"
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/B_eqw"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_marginBottom="@dimen/D_button_margin"
                 android:backgroundTint="@color/Buttons_color_2"
-                android:textColor="@color/white"
-                android:text="@string/eqw" />
+                android:text="@string/eqw"
+                android:textColor="@color/white" />
         </TableRow>
 
     </TableLayout>

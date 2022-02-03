@@ -42,11 +42,13 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/T_Memory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/D_button_margin"
             android:background="#5CE1D4D4"
             android:text=""
+            android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -56,12 +58,14 @@
         android:layout_weight="0.3">
 
         <TextView
+            android:id="@+id/T_Result"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_margin="@dimen/D_button_margin"
             android:background="#5CE1D4D4"
-            android:text="" />
+            android:text=""
+            android:textColor="@color/white" />
     </FrameLayout>
 
     <TableLayout
