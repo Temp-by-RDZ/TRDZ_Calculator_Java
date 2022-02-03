@@ -1,5 +1,6 @@
 package com.TRDZ.calculator;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,7 @@ public class Calculate {
 
 	/**Получаем сигнал о нажатии и начинаем обработку
 	 */
+	@SuppressLint("NonConstantResourceId")
 	public void get_and_run(View view) {
 		Button B_pressed = (Button) view;
 	//region Разделение кнопок по функционалу
@@ -135,7 +137,6 @@ public class Calculate {
 		case R.id.B_sep:        // ,
 			if (is_sep[col]==0&&prev<2) {
 				is_sep[col]=10;
-				T_Result.setText(T_Result.getText()+B_pressed.getText().toString());
 				}
 			break;
 		case R.id.B_delete_1s:  // ←
@@ -185,7 +186,9 @@ public class Calculate {
 	//region Вывод нажатий
 		StringBuilder pole = new StringBuilder();
 		pole.append(get_number(0));
-		pole.append(" "+symbol+" ");
+		pole.append(" ");
+		pole.append(symbol);
+		pole.append(" ");
 		if (num[1]!=0) pole.append(get_number(1));
 		T_Result.setText(pole);
 	//endregion
@@ -244,7 +247,8 @@ public class Calculate {
 		StringBuilder number = new StringBuilder();
 		if (num[seg]%1!=0) number.append(num[0]);
 		else if (is_sep[seg]>0) {
-			number.append((int) num[seg] + ".");
+			number.append((int) num[seg]);
+			number.append(".");
 			for (int i = 10; i < is_sep[seg]; i *= 10) number.append("0");
 			}
 		else number.append((int) num[seg]);

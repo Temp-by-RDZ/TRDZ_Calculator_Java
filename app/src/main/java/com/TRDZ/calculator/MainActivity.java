@@ -1,18 +1,13 @@
 package com.TRDZ.calculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
-
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 //region обьявление переменных
@@ -142,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) { math.get_and_run(view);}
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         math.pakeje(outState);
         outState.putString("T_Result", T_Result.getText().toString());
         outState.putString("T_Memory", T_Memory.getText().toString());
