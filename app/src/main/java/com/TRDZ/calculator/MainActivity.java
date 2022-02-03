@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     double saved;
     String symbol="";
     int action;
+    BigDecimal Dangerous_Math;
 //endregion
 
 @Override
@@ -217,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         case R.id.B_log:        // log()
             if (prev==0) {
             double temp=num[0];
-            num[0]=0;
+            num[0]=Math.log10(num[0]);
             result("log("+temp+")="+num[0]);
             return;
             }
@@ -252,13 +254,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             break;
         case R.id.B_delete_1s:  // ←
-            if (limit[3]>0) {limit[3]--; num[1]=round(1);}
-            else if (limit[2]>0) {limit[2]--;
+            if (limit[3]>0) {
+                limit[3]--;
+                num[1]=round(1);
+                }
+            else if (limit[2]>0) {
+                limit[2]--;
                 if (is_sep[1]>0) {is_sep[1]=0; limit[0]++;}
                 else num[1]=((int)(num[1])/10);}
             else if (prev>0) {prev=0; symbol=""; col=0;}
-            else if (limit[1]>0) {limit[1]--; num[0]=round(0);}
-            else if (limit[0]>0) {limit[0]--;
+            else if (limit[1]>0) {
+                limit[1]--;
+                num[0]=round(0);}
+            else if (limit[0]>0) {
+                limit[0]--;
                 if (is_sep[0]>0) {is_sep[0]=0; limit[0]++;}
                 else num[0]=((int)(num[0])/10);}
             break;
@@ -273,9 +282,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             break;
         default: // 1..9
             if (prev==2) prev=1;
-            if (num[col]<1000000000) {
-                if (is_sep[col]==0) {num[col]=num[col]*10+Double.parseDouble(B_pressed.getText().toString()); limit[col*2]++;}
-                else if(is_sep[col]<1000000000) { num[col]=num[col]+Double.parseDouble(B_pressed.getText().toString())/is_sep[col]; is_sep[col]*=10; limit[col*2+1]++;}
+            if (num[col]<1000000000&&num[col]>-1000000000) {
+                if (is_sep[col]==0) {
+                    limit[col*2]++;
+                    if (num[col]<0) num[col]=num[col]*10-Double.parseDouble(B_pressed.getText().toString());
+                    else num[col]=num[col]*10+Double.parseDouble(B_pressed.getText().toString()); }
+                else if(is_sep[col]<1000000000) {
+                    limit[col*2+1]++;
+                    if (num[col]<0) Dangerous_Math=BigDecimal.valueOf(num[col]).subtract(BigDecimal.valueOf(Double.parseDouble(B_pressed.getText().toString())).divide(BigDecimal.valueOf(is_sep[col])));
+                    else Dangerous_Math=BigDecimal.valueOf(num[col]).add(BigDecimal.valueOf(Double.parseDouble(B_pressed.getText().toString())).divide(BigDecimal.valueOf(is_sep[col])));
+                    num[col]=Dangerous_Math.doubleValue();
+                    is_sep[col]*=10;
+                    }
                 }
             }
     //endregion
@@ -301,7 +319,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             break;
         case 4: num[0]=Math.pow(num[0],num[1]);
             break;
-        case 5: num[0]/=num[1];
+        case 5:
+            Dangerous_Math=BigDecimal.valueOf(num[0]).divide(BigDecimal.valueOf(is_sep[1]));
+            num[0]=Dangerous_Math.doubleValue();
             break;
         case 6: num[0]%=num[1];
             break;
@@ -326,7 +346,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private double round( int seg) {
         is_sep[seg]/=10;
-        double result=Math.round(num[seg]*is_sep[seg]/10);
+        double result=Math.floor(num[seg]*is_sep[seg]/10);
         result/=is_sep[seg];
         return result*10;
         }
@@ -338,7 +358,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     protected String get_number(int seg) {
         StringBuilder number = new StringBuilder();
-        if (num[seg]%1>0) number.append(num[0]);
+        if (num[seg]%1!=0) number.append(num[0]);
         else if (is_sep[seg]>0) {
             number.append((int) num[seg] + ".");
             for (int i = 10; i < is_sep[seg]; i *= 10) number.append("0");
