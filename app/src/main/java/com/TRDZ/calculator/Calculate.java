@@ -3,10 +3,13 @@ package com.TRDZ.calculator;
 import static com.TRDZ.calculator.MainActivity.T_Memory;
 import static com.TRDZ.calculator.MainActivity.T_Result;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 public class Calculate {
 	int prev;
@@ -273,5 +276,27 @@ public class Calculate {
 		num[1]=0;
 		symbol="";
 		action=0;
+		}
+
+	protected void pakeje(Bundle outState) {
+		outState.putInt("action",action);
+		outState.putInt("prev",prev);
+		outState.putInt("col",col);
+		outState.putIntArray("limit",limit);
+		outState.putIntArray("is_se",is_sep);
+		outState.putDouble("saved",saved);
+		outState.putDoubleArray("num",num);
+		outState.putString("symbol",symbol);
+		}
+
+	protected void Depakeje(Bundle savedInstanceState) {
+		action=savedInstanceState.getInt("action");
+		prev=savedInstanceState.getInt("prev");
+		col=savedInstanceState.getInt("col");
+		limit=savedInstanceState.getIntArray("limit");
+		is_sep=savedInstanceState.getIntArray("is_se");
+		saved=savedInstanceState.getDouble("saved");
+		num=savedInstanceState.getDoubleArray("num");
+		symbol=savedInstanceState.getString("symbol");
 		}
 	}

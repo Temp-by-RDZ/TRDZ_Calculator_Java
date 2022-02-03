@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 //region обьявление переменных
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button B_delete_1s;
     Button B_delete_1w;
     Button B_delete_All;
+    String res;
+    String mem;
     Calculate math = new Calculate();
 //endregion
 
@@ -58,6 +61,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialize();
+        create_buttons();
+        if (savedInstanceState != null) reload();
         }
 
     protected void initialize() {
@@ -96,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         B_delete_1s= findViewById(R.id.B_delete_1s);
         B_delete_1w= findViewById(R.id.B_delete_1w);
         B_delete_All= findViewById(R.id.B_delete_All);
-        create_buttons();
         }
     protected void create_buttons() {
         B_num_0.setOnClickListener(this);
@@ -135,7 +139,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             B_stepx.setOnClickListener(this);
             }
         }
-
+    protected void reload()
+        {
+        }
+// сохранение состояния
+@Override
+protected void onSaveInstanceState(Bundle outState) {
+    math.pakeje(outState);
+    outState.putString("T_Result", T_Result.getText().toString());
+    outState.putString("T_Memory", T_Memory.getText().toString());
+    super.onSaveInstanceState(outState);
+    }
+// получение ранее сохраненного состояния
+@Override
+protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    super.onRestoreInstanceState(savedInstanceState);
+    T_Result.setText(savedInstanceState.getString("T_Result"));
+    T_Memory.setText(savedInstanceState.getString("T_Memory"));
+    math.Depakeje(savedInstanceState);
+    }
 
     @Override
     public void onClick(View view) { math.get_and_run(view); }
