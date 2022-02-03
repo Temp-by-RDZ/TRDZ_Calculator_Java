@@ -1,17 +1,17 @@
 package com.TRDZ.calculator;
 
-import static com.TRDZ.calculator.MainActivity.T_Memory;
-import static com.TRDZ.calculator.MainActivity.T_Result;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
-import java.util.ArrayList;
+
 
 public class Calculate {
+	TextView T_Memory;
+	TextView T_Result;
+	int action;
 	int prev;
 	int col;
 	int[] limit;
@@ -19,16 +19,17 @@ public class Calculate {
 	double[] num;
 	double saved;
 	String symbol;
-	int action;
 	BigDecimal Dangerous_Math;
 
-	public Calculate() {
+	public Calculate(TextView T_Memory, TextView T_Result) {
 		prev=0;
 		col=0;
 		symbol="";
 		num= new double[2];
 		is_sep = new int[2];
 		limit = new int[4];
+		this.T_Memory = T_Memory;
+		this.T_Result = T_Result;
 		}
 
 	/**Получаем сигнал о нажатии и начинаем обработку
