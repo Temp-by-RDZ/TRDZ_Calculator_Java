@@ -2,6 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Mega_font"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/b_dtrl"
@@ -57,27 +58,27 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_ln"
                 style="@style/B_Main_l"
                 android:text="@string/ln" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_fac"
                 style="@style/B_Main_l"
                 android:text="@string/fac" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_save"
                 style="@style/B_Main_l"
                 android:text="@string/save" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_load"
                 style="@style/B_Main_l"
                 android:text="@string/load" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_delete_1s"
                 style="@style/B_Main_l"
                 android:text="@string/delete_1s" />
@@ -95,27 +96,27 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_log"
                 style="@style/B_Main_l"
                 android:text="@string/log" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_cory"
                 style="@style/B_Main_l"
                 android:text="@string/cory" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_7"
                 style="@style/B_Main_l"
                 android:text="@string/_7" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_8"
                 style="@style/B_Main_l"
                 android:text="@string/_8" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_9"
                 style="@style/B_Main_l"
                 android:text="@string/_9" />
@@ -133,27 +134,27 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_sin"
                 style="@style/B_Main_l"
                 android:text="@string/sin" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_stepx"
                 style="@style/B_Main_l"
                 android:text="@string/stepx" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_4"
                 style="@style/B_Main_l"
                 android:text="@string/_4" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_5"
                 style="@style/B_Main_l"
                 android:text="@string/_5" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_6"
                 style="@style/B_Main_l"
                 android:text="@string/_6" />
@@ -171,31 +172,31 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_cos"
                 style="@style/B_Main_l"
                 android:text="@string/cos"
                 tools:ignore="TouchTargetSizeCheck" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_step"
                 style="@style/B_Main_l"
                 android:text="@string/step"
                 tools:ignore="TouchTargetSizeCheck" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_1"
                 style="@style/B_Main_l"
                 android:text="@string/_1"
                 tools:ignore="TouchTargetSizeCheck" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_2"
                 style="@style/B_Main_l"
                 android:text="@string/_2"
                 tools:ignore="TouchTargetSizeCheck" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_3"
                 style="@style/B_Main_l"
                 android:text="@string/_3"
@@ -214,20 +215,20 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_tan"
                 style="@style/B_Main_l"
                 android:text="@string/tan" />
 
             <Space />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_num_0"
                 style="@style/B_Main_l"
                 android:layout_span="2"
                 android:text="@string/_0" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/B_sep"
                 style="@style/B_Main_l"
                 android:text="@string/sep" />
