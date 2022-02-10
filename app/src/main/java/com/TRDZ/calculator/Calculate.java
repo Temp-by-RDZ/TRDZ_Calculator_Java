@@ -34,8 +34,10 @@ public class Calculate {
 		}
 
 	public void get_share(String share) {
-		T_Memory.setText(share);
-		saved=Integer.parseInt(share);
+		try {
+			saved=Integer.parseInt(share);
+			T_Memory.setText(share);}
+		catch (Exception ignored) {}
 		}
 
 	/**Получаем сигнал о нажатии и начинаем обработку
