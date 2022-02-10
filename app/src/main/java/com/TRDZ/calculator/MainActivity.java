@@ -79,9 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 			}
 		}
 
-
-
-
 	protected void initialize() {
 		T_Result = findViewById(R.id.T_Result);
 		T_Memory = findViewById(R.id.T_Memory);
