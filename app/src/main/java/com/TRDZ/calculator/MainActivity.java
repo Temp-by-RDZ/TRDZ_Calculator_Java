@@ -3,13 +3,12 @@ package com.TRDZ.calculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 //region обьявление переменных
@@ -49,21 +48,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	Button B_delete_1w;
 	Button B_delete_All;
 	Calculate math;
-	ToggleButton F_Alt;
 //endregion
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setTheme(App.currentTheme);
+		Bundle Launch = getIntent().getExtras();
+		int style;
+		if (Launch!=null) style = Launch.getInt("STYLE");
+		else style = R.style.Theme_Task02AS_Calculator;
+		setTheme(style);
 		setContentView(R.layout.activity_main);
 		initialize();
 		create_buttons();
-		style_toggle();
+		get_share();
 		}
 
+	protected void get_share() {
+		Intent intent = getIntent();
+		String action = intent.getAction();
+		String type = intent.getType();
+
+		if (Intent.ACTION_SEND.equals(action) && type != null) {
+			if ("text/plain".equals(type)) {
+				String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+				if (sharedText != null) {
+					math.get_share(sharedText);
+					}
+				}
+			}
+		}
+
+
+
+
 	protected void initialize() {
-		F_Alt = findViewById(R.id.F_Alternative);
 		T_Result = findViewById(R.id.T_Result);
 		T_Memory = findViewById(R.id.T_Memory);
 		math = new Calculate(T_Memory, T_Result);
@@ -138,20 +157,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 			B_step.setOnClickListener(this);
 			B_stepx.setOnClickListener(this);
 			}
-		}
-
-	protected void style_toggle() {
-
-		F_Alt.setOnClickListener(new View.OnClickListener()
-			{
-			@Override
-			public void onClick(View view)
-				{
-				if (F_Alt.isChecked()) App.currentTheme = R.style.Theme_Alternative;
-				else App.currentTheme = R.style.Theme_Task02AS_Calculator;
-				recreate();
-				}
-			});
 		}
 
 	@Override

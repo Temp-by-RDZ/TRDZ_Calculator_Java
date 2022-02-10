@@ -33,6 +33,11 @@ public class Calculate {
 		this.T_Result = T_Result;
 		}
 
+	public void get_share(String share) {
+		T_Memory.setText(share);
+		saved=Integer.parseInt(share);
+		}
+
 	/**Получаем сигнал о нажатии и начинаем обработку
 	 */
 	@SuppressLint("NonConstantResourceId")

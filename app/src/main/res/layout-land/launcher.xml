@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/b_lchl"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        style="@style/V_upBlock">
+
+        <TextView
+            android:layout_gravity="bottom"
+            style="@style/T_inMemory"
+            android:layout_margin="@dimen/D_button_margin_l"
+            android:text="@string/Config" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        style="@style/V_upBlock">
+
+        <TextView
+            android:layout_gravity="bottom"
+            style="@style/T_inMemory"
+            android:layout_margin="@dimen/D_button_margin_l"
+            android:text="@string/Alternative" />
+
+        <CheckBox
+            android:layout_gravity="bottom"
+            android:id="@+id/F_Alternative"
+            style="@style/Alternative" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        style="@style/V_upBlock">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/B_go"
+            android:text="@string/T_go"
+            style="@style/B_launcher" />
+
+    </LinearLayout>
+</LinearLayout>

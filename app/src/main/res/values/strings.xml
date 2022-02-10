@@ -1,5 +1,5 @@
 <resources>
-    <string name="Alternative">Альтернативная тема:</string>
+    <string name="Alternative">Альтернативная желтая тема:</string>
     <string name="app_name">Калькулятор</string>
     <string name="save"><![CDATA[M<]]></string>
     <string name="load"><![CDATA[M>]]></string>
@@ -35,4 +35,6 @@
     <string name="step">10</string>
     <string name="Memory_T">В памяти:</string>
     <string name="fac">!</string>
+    <string name="T_go">Запустить</string>
+    <string name="Config">Калькулятор</string>
 </resources>

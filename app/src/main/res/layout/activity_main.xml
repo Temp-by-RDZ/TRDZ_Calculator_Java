@@ -195,21 +195,4 @@
 
     </TableLayout>
 
-    <LinearLayout
-        style="@style/V_upBlock"
-        android:layout_weight="0.2">
-
-        <TextView
-            android:layout_gravity="bottom"
-            style="@style/T_inMemory"
-            android:layout_margin="@dimen/D_button_margin_l"
-            android:text="@string/Alternative" />
-
-        <ToggleButton
-            android:layout_gravity="bottom"
-            android:id="@+id/F_Alternative"
-            style="@style/Alternative" />
-
-    </LinearLayout>
-
 </LinearLayout>
